@@ -1047,6 +1047,8 @@ section,
   background-color: var(--surface-color);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   padding: 30px;
+  border-bottom: 2px solid color-mix(in srgb, var(--default-color), transparent 50%);
+  padding-bottom: 20px;
 }
 
 @media (max-width: 575px) {
@@ -1057,6 +1059,12 @@ section,
 
 .contact .info-item {
   margin-bottom: 40px;
+}
+
+@media (max-width: 575px) {
+  .contact .info-item {
+    margin-bottom: 60px;
+  }
 }
 
 .contact .info-item i {
@@ -1073,9 +1081,15 @@ section,
   margin-right: 15px;
 }
 
+.contact .info-item:hover i {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  transform: rotate(10deg); /* Animación sutil */
+}
+
 .contact .info-item h3 {
   padding: 0;
-  font-size: 18px;
+  font-size: clamp(16px, 2vw, 20px); /* Tamaño de fuente escalable */
   font-weight: 700;
   margin-bottom: 5px;
 }
@@ -1084,11 +1098,6 @@ section,
   padding: 0;
   margin-bottom: 0;
   font-size: 14px;
-}
-
-.contact .info-item:hover i {
-  background: var(--accent-color);
-  color: var(--contrast-color);
 }
 
 .contact .php-email-form {
@@ -1101,6 +1110,8 @@ section,
 @media (max-width: 575px) {
   .contact .php-email-form {
     padding: 20px;
+    max-width: 90%;
+    margin: auto;
   }
 }
 
@@ -1120,6 +1131,7 @@ section,
 .contact .php-email-form input[type=email]:focus,
 .contact .php-email-form textarea:focus {
   border-color: var(--accent-color);
+  box-shadow: 0 0 10px var(--accent-color); /* Nueva sombra al hacer foco */
 }
 
 .contact .php-email-form input[type=text]::placeholder,
@@ -1139,7 +1151,9 @@ section,
 
 .contact .php-email-form button[type=submit]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 25%);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Sombras al pasar el cursor */
 }
+
 
 /*--------------------------------------------------------------
 # Portfolio Details Section
